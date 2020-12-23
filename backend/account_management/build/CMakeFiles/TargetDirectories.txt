@@ -1,0 +1,3 @@
+/mnt/hgfs/ice/server/account_manage/build/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/ice/server/account_manage/build/CMakeFiles/am.dir
+/mnt/hgfs/ice/server/account_manage/build/CMakeFiles/edit_cache.dir

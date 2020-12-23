@@ -1,0 +1,5 @@
+resources:
+  - niceice-ingress-secret.yaml
+  - niceice-web-ingress.yaml
+  - deployment.yaml
+  - service.yaml

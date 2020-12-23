@@ -1,0 +1,19 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJXRENCL3FBREFnRUNBZ0VBTUFvR0NDcUdTTTQ5QkFNQ01DTXhJVEFmQmdOVkJBTU1HR3N6Y3kxelpYSjIKWlhJdFkyRkFNVFl3TURZMU5ERTVOakFlRncweU1EQTVNakV3TWpBNU5UWmFGdzB6TURBNU1Ua3dNakE1TlRaYQpNQ014SVRBZkJnTlZCQU1NR0dzemN5MXpaWEoyWlhJdFkyRkFNVFl3TURZMU5ERTVOakJaTUJNR0J5cUdTTTQ5CkFnRUdDQ3FHU000OUF3RUhBMElBQktEODA5bnprbUx3YnJLNzNjMFcxK0xQWEdua3lkZXlNYkZkL2RWMS9pUTkKeURMNmxWbC9xeXVSd1R0S1RxT01QdlRGVVlSdXlBbFByMTZKVXZiSTU0R2pJekFoTUE0R0ExVWREd0VCL3dRRQpBd0lDcERBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUFvR0NDcUdTTTQ5QkFNQ0Ewa0FNRVlDSVFDdGJLQzRkRGNjCnBVb3loa1NYQnpielFiRkZabkx0aUllUkFPTlJjQlhHZ2dJaEFQdjJMYkVCYkpReWFrL1pHRGZ3TEMyYmthN2wKTFpSY1U1emp2MU44Nk1BdAotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://niceice.cn:6443
+  name: default
+contexts:
+- context:
+    cluster: default
+    user: default
+  name: default
+current-context: default
+kind: Config
+preferences: {}
+users:
+- name: default
+  user:
+    password: b66bf552005dea6c46503fb763de1bb1
+    username: admin

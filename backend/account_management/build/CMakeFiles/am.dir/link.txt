@@ -1,0 +1,1 @@
+/usr/bin/c++   -pthread   CMakeFiles/am.dir/src/main.cpp.o  -o am  -L/mnt/hgfs/ice/server/account_manage/../../common/lib 

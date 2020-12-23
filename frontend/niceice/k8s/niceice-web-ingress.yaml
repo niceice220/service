@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: niceice-web
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: PathPrefixStrip
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+spec:
+  tls:
+    - hosts: 
+      - niceice.cn
+      secretName: niceice-ingress-secret
+  rules:
+  - host: niceice.cn
+    http:
+      paths:
+      - path: /resume
+        backend:
+          serviceName: niceice-resume
+          servicePort: 80
+      - path: /
+        backend:
+          serviceName: niceice-web
+          servicePort: 80

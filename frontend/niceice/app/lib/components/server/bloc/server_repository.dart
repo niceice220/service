@@ -1,9 +1,8 @@
 import 'server_state.dart';
 
 class ServerRepository {
-  final String _addr;
 
-  ServerRepository(final String addr) : _addr = addr {
+  ServerRepository(final String addr) {
     connectServer();
   }
 

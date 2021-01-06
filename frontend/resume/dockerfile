@@ -1,6 +1,6 @@
 
 FROM nginx
 # WORKDIR /usr/share/nginx/html
-COPY personal/profession/resume/resume.html /usr/share/nginx/html
-COPY service/frontend/resume/docker/default.conf /etc/nginx/conf.d/default.conf
+COPY frontend/resume/resume.html /usr/share/nginx/html
+COPY frontend/resume/docker/default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80

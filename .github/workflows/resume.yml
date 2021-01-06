@@ -1,0 +1,38 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+        - frontend/resume/**
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: /home/runner/work/service/service
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build docker image and push to aliyun
+        run: |
+          docker login --username=niceice220 -p=Ccccc123! registry.cn-shanghai.aliyuncs.com
+          docker build -t niceice/niceice-resume -f /home/runner/work/service/service/frontend/resume/dockerfile . 
+          docker tag niceice/niceice-resume registry.cn-shanghai.aliyuncs.com/niceice/niceice-resume
+          docker push registry.cn-shanghai.aliyuncs.com/niceice/niceice-resume
+          echo push to aliyun finished
+    
+      - name: install kubectl
+        uses: steebchen/kubectl@master
+
+      - name: deploy to niceice.cn k8s
+        run: |
+          kubectl --kubeconfig service/cicd/niceice/k3s.yaml delete -k service/frontend/resume/k8s
+          kubectl --kubeconfig service/cicd/niceice/k3s.yaml apply -k service/frontend/resume/k8s

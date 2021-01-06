@@ -26,7 +26,7 @@ class App extends StatelessWidget {
                 ? null
                 : AppBar(
                     centerTitle: true,
-                    title: Text('尝试连接服务器...(功能不可用)'),
+                    title: Text('尝试连接服务器...(功能不可用.)'),
                     backgroundColor: Colors.red,
                   ),
             body: AppNavigation()

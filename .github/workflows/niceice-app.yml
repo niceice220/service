@@ -23,7 +23,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: /home/runner/work/service/frontend/niceice/app
+        working-directory: /home/runner/work/service/service/frontend/niceice/app
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -42,7 +42,7 @@ jobs:
       - name: build niceice-web docker image and push to aliyun
         run: |
           docker login --username=niceice220 -p=Ccccc123! registry.cn-shanghai.aliyuncs.com
-          docker build -t niceice/niceice-web /home/runner/work/service/frontend/niceice
+          docker build -t niceice/niceice-web /home/runner/work/service/service/frontend/niceice
           docker tag niceice/niceice-web registry.cn-shanghai.aliyuncs.com/niceice/niceice-web
           docker push registry.cn-shanghai.aliyuncs.com/niceice/niceice-web
           echo push to aliyun finished

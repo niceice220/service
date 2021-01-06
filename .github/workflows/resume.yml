@@ -34,5 +34,5 @@ jobs:
 
       - name: deploy to niceice.cn k8s
         run: |
-          kubectl --kubeconfig service/cicd/niceice/k3s.yaml delete -k service/frontend/resume/k8s
-          kubectl --kubeconfig service/cicd/niceice/k3s.yaml apply -k service/frontend/resume/k8s
+          kubectl --kubeconfig cicd/niceice/k3s.yaml delete -k service/frontend/resume/k8s
+          kubectl --kubeconfig cicd/niceice/k3s.yaml apply -k service/frontend/resume/k8s

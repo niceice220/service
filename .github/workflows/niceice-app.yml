@@ -1,0 +1,56 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+    paths:
+        - frontend/niceice/**
+    tags:
+        - "v*.*.*"
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: /home/runner/work/service/frontend/niceice/app
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: beta
+      - run: flutter config --enable-web
+      - run: flutter pub get
+      # - run: flutter test
+      - run: flutter build web
+
+
+      - name: build niceice-web docker image and push to aliyun
+        run: |
+          docker login --username=niceice220 -p=Ccccc123! registry.cn-shanghai.aliyuncs.com
+          docker build -t niceice/niceice-web /home/runner/work/service/frontend/niceice
+          docker tag niceice/niceice-web registry.cn-shanghai.aliyuncs.com/niceice/niceice-web
+          docker push registry.cn-shanghai.aliyuncs.com/niceice/niceice-web
+          echo push to aliyun finished
+    
+      - name: install kubectl
+        uses: steebchen/kubectl@master
+
+      - name: deploy to niceice.cn k8s
+        run: |
+          kubectl --kubeconfig ../../../cicd/niceice/k3s.yaml delete -k ../k8s
+          kubectl --kubeconfig ../../../cicd/niceice/k3s.yaml apply -k ../k8s

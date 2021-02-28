@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:app/common/common.dart';
 import 'login_page.dart';
-import 'package:app/components/account/register/register_page.dart';
-import 'package:app/components/account/register/bloc/register_bloc.dart';
+import 'package:app/components/account/components/register/register_page.dart';
+import 'package:app/components/account/components/register/bloc/register_bloc.dart';
 
 class LoginTab extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:app/common/constant.dart';
+import 'package:app/common/util/constant.dart';
 
 String verifyMailAddr(String mailAddr) {
   // RegExp reg = new RegExp(r'^[a-zA-Z0-9_-]{1,16}$');

@@ -1,5 +1,5 @@
 import 'package:app/common/common.dart';
-import 'package:app/components/account/register/bloc/register_bloc.dart';
+import 'package:app/components/account/components/register/bloc/register_bloc.dart';
 
 class GetAuthCodeField extends StatefulWidget {
   final String inputLabel;

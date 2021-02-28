@@ -2,7 +2,13 @@ import 'package:bloc/bloc.dart';
 
 // We can extend `BlocDelegate` and override `onTransition` and `onError`
 // in order to handle transitions and errors from all Blocs.
-class AppBlocObserver extends BlocObserver{
+class AppBlocObserver extends BlocObserver {
+  @override
+  void onChange(Cubit cubit, Change change) {
+    print('${cubit.runtimeType} $change');
+    super.onChange(cubit, change);
+  }
+
   @override
   void onEvent(Bloc bloc, Object event) {
     print(event);
@@ -18,6 +24,7 @@ class AppBlocObserver extends BlocObserver{
   @override
   void onError(Cubit cubit, Object error, StackTrace stackTrace) {
     print(error);
+    print('${cubit.runtimeType} $error $stackTrace');
     super.onError(cubit, error, stackTrace);
   }
 }

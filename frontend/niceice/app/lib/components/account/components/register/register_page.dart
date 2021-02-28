@@ -1,6 +1,6 @@
 
 import 'package:app/common/common.dart';
-import 'package:app/components/account/register/bloc/register_bloc.dart';
+import 'package:app/components/account/components/register/bloc/register_bloc.dart';
 import 'register_mail_account_field.dart';
 import 'get_auth_code.dart';
 

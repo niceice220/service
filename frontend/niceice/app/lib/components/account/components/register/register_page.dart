@@ -1,4 +1,3 @@
-
 import 'package:app/common/common.dart';
 import 'package:app/components/account/components/register/bloc/register_bloc.dart';
 import 'register_mail_account_field.dart';
@@ -29,10 +28,11 @@ class RegisterPageState extends State<RegisterPage> {
       SizedBox(height: 80),
       LoginLogo(),
       Container(
-          margin: EdgeInsets.symmetric(horizontal: gHorizontalPadding),
+          margin: EdgeInsets.symmetric(
+              horizontal: Configs.getInstance().horizontalPadding),
           child: AccountField(
             key: _accountKey,
-            inputLabel: gUserNameLabel,
+            inputLabel: Configs.getInstance().userNameLabel,
             validator: verifyAccount,
             onEditingCompleted: () {
               _mailKey.currentState.focusNode.requestFocus();
@@ -40,10 +40,11 @@ class RegisterPageState extends State<RegisterPage> {
           )),
       heightBox20,
       Container(
-        margin: EdgeInsets.symmetric(horizontal: gHorizontalPadding),
+        margin: EdgeInsets.symmetric(
+            horizontal: Configs.getInstance().horizontalPadding),
         child: RegisterMailAccountField(
           key: _mailKey,
-          inputLabel: gEmailLabel,
+          inputLabel: Configs.getInstance().emailLabel,
           onEditingCompleted: () {
             _authCodeKey.currentState.focusNode.requestFocus();
           },
@@ -55,10 +56,11 @@ class RegisterPageState extends State<RegisterPage> {
           return Column(
             children: [
               Container(
-                  margin: EdgeInsets.symmetric(horizontal: gHorizontalPadding),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: Configs.getInstance().horizontalPadding),
                   child: GetAuthCodeField(
                     key: _authCodeKey,
-                    inputLabel: gEmailAuthCodeLabel,
+                    inputLabel: Configs.getInstance().emailAuthCodeLabel,
                     onEditingCompleted: () {
                       _pwdKey.currentState.focusNode.requestFocus();
                     },
@@ -71,7 +73,8 @@ class RegisterPageState extends State<RegisterPage> {
         }
       }),
       Container(
-          margin: EdgeInsets.symmetric(horizontal: gHorizontalPadding),
+          margin: EdgeInsets.symmetric(
+              horizontal: Configs.getInstance().horizontalPadding),
           child: PasswordField(
             key: _pwdKey,
             onEditingCompleted: () {
@@ -82,7 +85,7 @@ class RegisterPageState extends State<RegisterPage> {
       FlatButton(
         onPressed: () {},
         focusNode: _registerButtonFocusNode,
-        child: Text(gRegister),
+        child: Text(Configs.getInstance().register),
         splashColor: Theme.of(context).primaryColor,
         padding: EdgeInsets.all(30.0),
         shape: CircleBorder(
@@ -99,7 +102,8 @@ class RegisterPageState extends State<RegisterPage> {
                 width: desktopLoginScreenMainAreaWidth(context: context),
                 child: Column(children: body)))
         : ListView(
-            padding: EdgeInsets.symmetric(horizontal: gHorizontalPadding),
+            padding: EdgeInsets.symmetric(
+                horizontal: Configs.getInstance().horizontalPadding),
             children: body);
   }
 }

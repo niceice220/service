@@ -17,7 +17,8 @@ class LoginPage extends StatelessWidget {
                   children: loginWidgetList,
                 )))
         : ListView(
-            padding: EdgeInsets.symmetric(horizontal: gHorizontalPadding),
+            padding: EdgeInsets.symmetric(
+                horizontal: Configs.getInstance().horizontalPadding),
             children: loginWidgetList);
   }
 }
@@ -27,16 +28,15 @@ final List<Widget> loginWidgetList = <Widget>[
   SizedBox(height: 80),
   LoginLogo(),
   Container(
-      margin: EdgeInsets.symmetric(horizontal: gHorizontalPadding),
-      child: 
-      AccountField(
+      margin: EdgeInsets.symmetric(horizontal: Configs.getInstance().horizontalPadding),
+      child: AccountField(
         key: _accountKey,
         inputLabel: '树荫号/邮箱/手机',
         validator: verifyAccount,
       )),
   heightBox20,
   Container(
-      margin: EdgeInsets.symmetric(horizontal: gHorizontalPadding),
+      margin: EdgeInsets.symmetric(horizontal: Configs.getInstance().horizontalPadding),
       child: PasswordField()),
   heightBox20,
   FlatButton(

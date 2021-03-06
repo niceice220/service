@@ -18,6 +18,12 @@ const heightBox20 = SizedBox(
 );
 
 double desktopLoginScreenMainAreaWidth({BuildContext context}) {
-  return min(gDesktopLeastWidth,
-      MediaQuery.of(context).size.width - 2 * gHorizontalPadding);
+  return min(
+      Configs.getInstance().desktopLeastWidth,
+      MediaQuery.of(context).size.width -
+          2 * Configs.getInstance().horizontalPadding);
+}
+
+initApp() async {
+  Configs.getInstance().loadConfigs();
 }

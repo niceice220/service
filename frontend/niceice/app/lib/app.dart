@@ -1,7 +1,6 @@
 import 'package:app/common/common.dart';
 import 'package:app/components/server/server.dart';
 import 'package:app/components/navigation/navigation.dart';
-import 'package:universal_html/html.dart';
 
 class App extends StatelessWidget {
   @override
@@ -9,7 +8,7 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<ServerBloc>(
-          create: (context) => ServerBloc("wss://niceice.cn/ws"),
+          create: (context) => ServerBloc(Configs.getInstance().serverUrl),
         )
       ],
       child: AppView(),
@@ -26,7 +25,7 @@ class _AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: gAppName,
+        title: Configs.getInstance().appName,
         theme: appTheme,
         home: BlocBuilder<ServerBloc, ServerState>(builder: (context, state) {
           return Scaffold(
@@ -34,7 +33,7 @@ class _AppViewState extends State<AppView> {
                   ? null
                   : AppBar(
                       centerTitle: true,
-                      title: Text('尝试连接服务器...(功能不可用_)'),
+                      title: Text(Configs.getInstance().tryReconnectPrompt),
                       backgroundColor: Colors.red,
                     ),
               body: AppNavigation());

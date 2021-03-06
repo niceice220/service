@@ -40,9 +40,9 @@ class _AppNavigationBarState extends State<AppNavigation> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              label: gMainBottomNavigationName, icon: Icon(Icons.home)),
+              label: Configs.getInstance().homeBottomNavigationName, icon: Icon(Icons.home)),
           BottomNavigationBarItem(
-              label: gMineBottomNavigationName, icon: Icon(Icons.person))
+              label: Configs.getInstance().mineBottomNavigationName, icon: Icon(Icons.person))
         ],
         currentIndex: _currentPage,
         onTap: (pageIndex) {

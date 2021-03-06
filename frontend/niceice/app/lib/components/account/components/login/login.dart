@@ -15,8 +15,8 @@ class _LoginTab extends State<LoginTab> {
   @override
   Widget build(BuildContext context) {
     List<String> tabs = [
-      gLogin,
-      gRegister,
+      Configs.getInstance().login,
+      Configs.getInstance().register,
     ];
 
     return DefaultTabController(

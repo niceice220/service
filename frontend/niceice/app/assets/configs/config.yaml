@@ -1,0 +1,14 @@
+
+app:
+  name: Niceice
+  server_url: wss://niceice.cn/ws
+  homeBottomNavigationName: 主页
+  mineBottomNavigationName: 我
+  userNameLabel: '昵称'
+  emailLabel: '邮箱'
+  emailAuthCodeLabel: '邮箱验证码'
+  register: '注册'
+  login: '登录'
+  failTimesToShowDisconnect: 3
+  horizontalPadding: 24.0
+  desktopLeastWidth: 360

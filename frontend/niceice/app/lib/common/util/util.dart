@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:app/common/util/constant.dart';
+import 'package:app/common/util/config.dart';
 
 String verifyMailAddr(String mailAddr) {
   // RegExp reg = new RegExp(r'^[a-zA-Z0-9_-]{1,16}$');
@@ -12,7 +12,6 @@ String verifyMailAddr(String mailAddr) {
 String verifyAccount(String account) {
   return account.isEmpty ? '不能为空' : null;
 }
-
 
 const heightBox20 = SizedBox(
   height: 20,

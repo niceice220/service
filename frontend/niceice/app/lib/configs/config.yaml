@@ -1,3 +1,4 @@
 
-app_name: niceice
-server_url: wss://niceice.cn/ws
+app:
+  name: Niceice
+  server_url: wss://niceice.cn/ws

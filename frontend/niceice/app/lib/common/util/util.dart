@@ -25,5 +25,5 @@ double desktopLoginScreenMainAreaWidth({BuildContext context}) {
 }
 
 initApp() async {
-  Configs.getInstance().loadConfigs();
+  await Configs.getInstance().loadConfigs();
 }

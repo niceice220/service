@@ -31,7 +31,6 @@ class Configs {
   String get login => _configMap['app']['login'];
   int get failTimesToShowDisconnect =>
       _configMap['app']['failTimesToShowDisconnect'];
-
   String get tryReconnectPrompt =>
       _errorPromptConfigMap['net']['try-reconnect'];
 }
